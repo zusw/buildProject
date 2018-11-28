@@ -1,0 +1,1 @@
+export const NAV_CHANGE = 'nav/NAV_CHANGE'

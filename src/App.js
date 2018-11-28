@@ -1,10 +1,12 @@
 import React, { Component } from 'react';
-import RootRouter from './router'
+import Routers from './root'
+import './styles/index.less'
+
 class App extends Component {
   render() {
     return (
       <div className="App">
-        <RootRouter />
+        <Routers />
       </div>
     );
   }
