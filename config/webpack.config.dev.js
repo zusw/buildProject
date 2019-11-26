@@ -1,4 +1,4 @@
-'use strict';
+
 
 const fs = require('fs');
 const path = require('path');
@@ -150,7 +150,14 @@ module.exports = {
       // Support React Native Web
       // https://www.smashingmagazine.com/2016/08/a-glimpse-into-the-future-with-react-native-for-web/
       'react-native': 'react-native-web',
-      Components: path.join(__dirname, '../src/components')
+      Components: path.resolve(__dirname, '../src/components'),
+      layout: path.resolve(__dirname, '../src/layout'),
+      common: path.resolve(__dirname, '../src/assets/common'),
+      pages: path.resolve(__dirname, '../src/pages'),
+      routes: path.resolve(__dirname, '../src/routes'),
+      constants: path.resolve(__dirname, '../src/constants'),
+      '@': path.resolve(__dirname, '../src/redux'),
+      '@src': path.resolve(__dirname, '../src')
     },
     plugins: [
       // Adds support for installing with Plug'n'Play, leading to faster installs and adding

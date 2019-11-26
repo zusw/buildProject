@@ -1,7 +1,16 @@
+/*
+ * @Author: zusw
+ * @Date: 2019-11-19 10:52:55
+ * @LastEditTime: 2019-11-26 16:05:18
+ * @LastEditors: zusw
+ * @Description: 
+ */
 import React, { Component } from 'react';
 import { connect } from 'react-redux'
 import { getJokesList } from './store/actionCreators';
 import BackToTop from '../../common/backToTop'
+import { Button } from 'antd'
+import { editCustomerInfo } from './service'
 
 class Joke extends Component {
   constructor(props) {
@@ -14,6 +23,11 @@ class Joke extends Component {
     const { getInitList, jokeList } = this.props
     getInitList(jokeList)
     this.bindEvents()
+    this.getList()
+  }
+  getList = async() => {
+    const res = await editCustomerInfo()
+    console.log(res, 121212)
   }
   bindEvents=()=> {
     document.getElementById('jokeContent').addEventListener('scroll', () => {
@@ -37,6 +51,7 @@ class Joke extends Component {
     // 笑话大全
     return (
       <div className="jokeContent" id="jokeContent">
+        <Button type='primary' onClick={() => { alert('hello joke') }}>hello</Button>
         {
           jokeList.map((item) => {
             return <p key={item.hashId}>{item.content}</p>
